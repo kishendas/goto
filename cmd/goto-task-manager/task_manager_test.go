@@ -17,25 +17,6 @@ package main
 
 import "fmt"
 
-type User struct {
-	name string
-}
-
-func New(name string) *User {
-	return &User{
-		name: name,
-	}
-}
-
-type UserInterface interface {
-	Name() string
-}
-
-func (u *User) Name() string {
-	return "name: " + u.name
-}
-
 func main() {
-	userA := New("kishen das")
-	fmt.Println(userA.Name())
+	fmt.Println("task_manager")
 }

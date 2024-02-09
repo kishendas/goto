@@ -15,27 +15,30 @@ limitations under the License.
 */
 package main
 
-import "fmt"
+import (
+	"context"
+	"database/sql"
+	"fmt"
+)
 
-type User struct {
-	name string
+func ExecuteTx(
+	ctx context.Context, opts *sql.TxOptions,
+) error {
+	return nil
 }
 
-func New(name string) *User {
-	return &User{
-		name: name,
-	}
+func Exec(_ context.Context, q string, args ...interface{}) error {
+	return nil
 }
 
-type UserInterface interface {
-	Name() string
+func Commit(_ context.Context) error {
+	return nil
 }
 
-func (u *User) Name() string {
-	return "name: " + u.name
+func Rollback(_ context.Context) error {
+	return nil
 }
 
 func main() {
-	userA := New("kishen das")
-	fmt.Println(userA.Name())
+	fmt.Println("db_client")
 }

@@ -15,27 +15,22 @@ limitations under the License.
 */
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-type User struct {
-	name string
+type Scheduler struct {
+	DAGId string
 }
 
-func New(name string) *User {
-	return &User{
-		name: name,
-	}
+func (s Scheduler) RetrieveDAGs() error {
+	return nil
 }
 
-type UserInterface interface {
-	Name() string
-}
-
-func (u *User) Name() string {
-	return "name: " + u.name
+func (s Scheduler) InvokeDAGOrchestrator(DAGId string) error {
+	return nil
 }
 
 func main() {
-	userA := New("kishen das")
-	fmt.Println(userA.Name())
+	fmt.Println("scheduler")
 }

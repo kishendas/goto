@@ -15,27 +15,26 @@ limitations under the License.
 */
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-type User struct {
-	name string
+type DAGOrchestrator struct {
+	DagId string
 }
 
-func New(name string) *User {
-	return &User{
-		name: name,
-	}
+func (d DAGOrchestrator) ExecuteDAG(DAGId string) error {
+	return nil
 }
 
-type UserInterface interface {
-	Name() string
+func (d DAGOrchestrator) ExecutePhase(DAGId string, PhaseId string) error {
+	return nil
 }
 
-func (u *User) Name() string {
-	return "name: " + u.name
+func (d DAGOrchestrator) InvokeTaskManager(DAGId string, PhaseId string) error {
+	return nil
 }
 
 func main() {
-	userA := New("kishen das")
-	fmt.Println(userA.Name())
+	fmt.Println("dag_orchestrator")
 }
