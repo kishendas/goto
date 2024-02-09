@@ -15,27 +15,27 @@ limitations under the License.
 */
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-type User struct {
-	name string
+type DAGRegisterer struct {
+	DAGId string
 }
 
-func New(name string) *User {
-	return &User{
-		name: name,
-	}
+func (dr DAGRegisterer) RegisterDAG() {
+	fmt.Println("register a DAG")
 }
 
-type UserInterface interface {
-	Name() string
+func (dr DAGRegisterer) ValidateDAG() {
+	fmt.Println("validate a DAG")
 }
 
-func (u *User) Name() string {
-	return "name: " + u.name
+func (dr DAGRegisterer) ValidateDAGSLA() {
+	fmt.Println("validate a DAG SLA")
 }
 
-func main() {
-	userA := New("kishen das")
-	fmt.Println(userA.Name())
+func (dr DAGRegisterer) DetectCycle() error {
+	fmt.Println("check for cycle in DAG")
+	return nil
 }

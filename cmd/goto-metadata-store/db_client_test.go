@@ -15,27 +15,10 @@ limitations under the License.
 */
 package main
 
-import "fmt"
-
-type User struct {
-	name string
-}
-
-func New(name string) *User {
-	return &User{
-		name: name,
-	}
-}
-
-type UserInterface interface {
-	Name() string
-}
-
-func (u *User) Name() string {
-	return "name: " + u.name
-}
+import (
+	"fmt"
+)
 
 func main() {
-	userA := New("kishen das")
-	fmt.Println(userA.Name())
+	fmt.Println("db_client")
 }

@@ -17,25 +17,18 @@ package main
 
 import "fmt"
 
-type User struct {
-	name string
+type TaskManager struct {
+	TaskId string
 }
 
-func New(name string) *User {
-	return &User{
-		name: name,
-	}
+func (t TaskManager) ExecuteTask(TaskId string) error {
+	return nil
 }
 
-type UserInterface interface {
-	Name() string
-}
-
-func (u *User) Name() string {
-	return "name: " + u.name
+func (t TaskManager) SpinUpInfra(TaskId string) error {
+	return nil
 }
 
 func main() {
-	userA := New("kishen das")
-	fmt.Println(userA.Name())
+	fmt.Println("task_manager")
 }
