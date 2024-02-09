@@ -1,5 +1,5 @@
 # goto
-GOTO: Serverless extract-transform framework for a workflow orchestrator
+GOTO: Serverless workflow orchestrator framework for extract-transform data pipelines
 
 # Overall architecture 
 
