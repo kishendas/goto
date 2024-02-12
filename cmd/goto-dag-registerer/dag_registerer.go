@@ -39,3 +39,7 @@ func (dr DAGRegisterer) DetectCycle() error {
 	fmt.Println("check for cycle in DAG")
 	return nil
 }
+
+func main() {
+	fmt.Println("dag_registerer")
+}

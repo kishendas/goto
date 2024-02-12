@@ -25,14 +25,14 @@ type DAG struct {
 	SandboxId         string
 	DAGAuthorId       string
 	ShardId           string
-	Phase             []Phase
+	Phase             []Stage
 	CreatedTime       time.Time
 	LastHeartbeatTime time.Time
 	LastRunTime       time.Time
 	TimeSLA           int64
 }
 
-type Phase struct {
+type Stage struct {
 	DAGId       string
 	PhaseId     string
 	Tasks       []Task
@@ -43,11 +43,17 @@ type Phase struct {
 
 type Task struct {
 	DAGId             string
-	PhaseId           string
+	StageId           string
 	TaskId            string
 	Query             string
 	CreatedTime       time.Time
 	LastHeartbeatTime time.Time
 	LastRunTime       time.Time
 	TimeSLA           int64
+}
+
+type RawStage struct {
+	index      int
+	stage      int
+	finalStage int
 }
